@@ -32,15 +32,17 @@
     <div id="expression">표정을 분석 중...</div>
 
     <script>
+
+
         // video 요소와 텍스트 요소 가져오기
 const video = document.getElementById('video');
 const expressionDisplay = document.getElementById('expression');
 
 // Face-api.js 모델 로드
 Promise.all([
-    faceapi.nets.tinyFaceDetector.loadFromUri('https://cdn.jsdelivr.net/npm/face-api.js/models'),
-    faceapi.nets.faceLandmark68Net.loadFromUri('https://cdn.jsdelivr.net/npm/face-api.js/models'),
-    faceapi.nets.faceExpressionNet.loadFromUri('https://cdn.jsdelivr.net/npm/face-api.js/models')
+    faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+    faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+    faceapi.nets.faceExpressionNet.loadFromUri('/models')
 ]).then(startVideo);
 
 // 웹캠 시작 함수
